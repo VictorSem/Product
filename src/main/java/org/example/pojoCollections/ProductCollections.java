@@ -18,7 +18,6 @@ public class ProductCollections {
 	}
 
 	public static ArrayList<Product>  getAllProduct() {
-		ArrayList<Product> products = prod;
 		if (prod.isEmpty()) {
 			Product pr1 = new Product().setName("Икра красная \"Вкуснота \"").setBrand("Белорусская традиция").setPrice("120");
 			Product pr2 = new Product().setName("Чай зеленый \"Принцесса Нури\"").setBrand("Ахмад").setPrice("15");		
@@ -28,19 +27,16 @@ public class ProductCollections {
 			Product pr6 = new Product().setName("English Breakfast").setBrand("Lipton").setPrice("12");
 			Product pr7 = new Product().setName("Royal Ceylon").setBrand("Lipton").setPrice("14");
 		
-		
-				
-			
-			products.add(pr1);
-			products.add(pr2);
-			products.add(pr3);
-			products.add(pr4);
-			products.add(pr5);
-			products.add(pr6);
-			products.add(pr7);
+			prod.add(pr1);
+			prod.add(pr2);
+			prod.add(pr3);
+			prod.add(pr4);
+			prod.add(pr5);
+			prod.add(pr6);
+			prod.add(pr7);
 		
 		}
-		return products;
+		return prod;
 	}
 
 	public void printAll(ArrayList<Product> prod) {
