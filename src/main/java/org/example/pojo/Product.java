@@ -31,7 +31,7 @@ public class Product {
 	
 	
 	@Override
-	public String toString() {
+	public String toString() { 
 		return "AllProduct [name=" + name + ", price=" + price + ", brand=" + brand + "]";
 	}
 }
