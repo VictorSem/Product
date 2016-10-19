@@ -11,10 +11,36 @@ public class ProductCollections {
 	
 	private static final Logger log = Logger.getLogger(ProductCollections.class);
 	
-	private ArrayList<Product> prod = new ArrayList<>();
+	public static ArrayList<Product> prod = new ArrayList<>();
 
 	public int size() {
 		return prod.size();
+	}
+
+	public static ArrayList<Product>  getAllProduct() {
+		ArrayList<Product> products = prod;
+		if (prod.isEmpty()) {
+			Product pr1 = new Product().setName("Икра красная \"Вкуснота \"").setBrand("Белорусская традиция").setPrice("120");
+			Product pr2 = new Product().setName("Чай зеленый \"Принцесса Нури\"").setBrand("Ахмад").setPrice("15");		
+			Product pr3 = new Product().setName("Чай ароматный с бергамотом.").setBrand("Беседа").setPrice("221");
+			Product pr4 = new Product().setName("Lipton Yellow Label").setBrand("Lipton").setPrice("24");
+			Product pr5 = new Product().setName("Magic aroma").setBrand("Lipton").setPrice("18");
+			Product pr6 = new Product().setName("English Breakfast").setBrand("Lipton").setPrice("12");
+			Product pr7 = new Product().setName("Royal Ceylon").setBrand("Lipton").setPrice("14");
+		
+		
+				
+			
+			products.add(pr1);
+			products.add(pr2);
+			products.add(pr3);
+			products.add(pr4);
+			products.add(pr5);
+			products.add(pr6);
+			products.add(pr7);
+		
+		}
+		return products;
 	}
 
 	public void printAll(ArrayList<Product> prod) {
@@ -39,8 +65,8 @@ public class ProductCollections {
 		this.prod = prod;
 	}
 
-	public ArrayList<Product> sortByName(ArrayList<Product> prod) {
-		Collections.sort(prod, sortByName);
+	public ArrayList<Product> sortByName() {
+		Collections.sort(getAllProduct(), sortByName);
 		return prod;
 	}
 
@@ -50,20 +76,20 @@ public class ProductCollections {
 
 	}
 
-	public Product prodWithMaxPrice(ArrayList<Product> prod) {
-		return Collections.max(prod, sortByPrice );
+	public Product prodWithMaxPrice() {
+		return Collections.max(getAllProduct(), sortByPrice );
 	}
 
-	public Product prodWithMinPrice(ArrayList<Product> prod) {
-		return Collections.min(prod, sortByPrice );
+	public Product prodWithMinPrice() {
+		return Collections.min(getAllProduct(), sortByPrice );
 	}
 
-	public ArrayList<Product> findByName(String productName, ArrayList<Product> prod) {
+	public ArrayList<Product> findByName(String productName) {
 
 		ArrayList<Product> productWithEqualsName = new ArrayList<>();
 		for (int i = 0; i < size(); i++) {
 			if (prod.get(i).getName().equalsIgnoreCase(productName)) {
-				productWithEqualsName.add(prod.get(i));
+				productWithEqualsName.add(getAllProduct().get(i));
 			}
 		}
 
