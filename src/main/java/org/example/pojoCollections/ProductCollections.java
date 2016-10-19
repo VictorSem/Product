@@ -16,7 +16,16 @@ public class ProductCollections {
 	public int size() {
 		return prod.size();
 	}
-
+	
+	
+	public Product get(int i) {
+		return prod.get(i);
+	}
+	
+	public boolean isEmpty() {
+		return prod.isEmpty();
+	}
+	
 	public static ArrayList<Product>  getAllProduct() {
 		if (prod.isEmpty()) {
 			Product pr1 = new Product().setName("Икра красная \"Вкуснота \"").setBrand("Белорусская традиция").setPrice("120");
@@ -26,16 +35,16 @@ public class ProductCollections {
 			Product pr5 = new Product().setName("Magic aroma").setBrand("Lipton").setPrice("18");
 			Product pr6 = new Product().setName("English Breakfast").setBrand("Lipton").setPrice("12");
 			Product pr7 = new Product().setName("Royal Ceylon").setBrand("Lipton").setPrice("14");
-		
+			
 			prod.add(pr1);
 			prod.add(pr2);
 			prod.add(pr3);
 			prod.add(pr4);
 			prod.add(pr5);
 			prod.add(pr6);
-			prod.add(pr7);
-		
+			prod.add(pr7);		
 		}
+			
 		return prod;
 	}
 
@@ -57,9 +66,7 @@ public class ProductCollections {
 		return prod;
 	}
 
-	public void setProd(ArrayList<Product> prod) {
-		this.prod = prod;
-	}
+	
 
 	public ArrayList<Product> sortByName() {
 		Collections.sort(getAllProduct(), sortByName);
